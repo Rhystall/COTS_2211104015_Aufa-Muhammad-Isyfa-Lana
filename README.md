@@ -1,16 +1,15 @@
-# gojek_clone
+## Screenshot
+### 1. Login Page
 
-A new Flutter project.
+![WhatsApp Image 2025-01-03 at 17 02 00_93114147](https://github.com/user-attachments/assets/9b1f55a7-ad6d-4932-a657-754b665d8b48)
 
-## Getting Started
+### 2. Onboarding Page
 
-This project is a starting point for a Flutter application.
+![WhatsApp Image 2025-01-03 at 17 02 00_b1d1d67c](https://github.com/user-attachments/assets/b3691d86-3a49-4206-adec-611ddd301093)
 
-A few resources to get you started if this is your first Flutter project:
+### 3. Main Page
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![WhatsApp Image 2025-01-03 at 17 02 00_4535361d](https://github.com/user-attachments/assets/fda1cca0-d62d-44d0-8bde-9b2735b14aa2)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Bug 
+Terdapat BUG di Bottom Navigation Bar dimana Selected Item nya harus di pencet 2x baru berubah. Walaupun halamannya sudah terganti dalam 1x pencet.
