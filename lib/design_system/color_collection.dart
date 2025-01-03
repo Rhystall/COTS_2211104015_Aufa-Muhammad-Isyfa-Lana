@@ -5,7 +5,7 @@ class ColorCollection {
   static const Color primary1 = Color(0xFF00AA13);
   static const Color primary2 = Color(0xFFEE2737);
   static const Color primary3 = Color(0xFFFF6700);
-  static const Color primary4 = Color(0xFF00AED6);
+  static const Color blue = Color(0xFF00AED6);
   static const Color primary5 = Color(0xFF93328E);
   static const Color primary6 = Color(0xFFDF1998);
   static const Color black = Color(0xFF000000);
