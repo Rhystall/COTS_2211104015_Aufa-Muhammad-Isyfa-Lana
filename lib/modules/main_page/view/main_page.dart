@@ -76,24 +76,21 @@ class MainPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          "12 XP to your next treasure",
-                          style: TextStyle(color: Colors.white70),
-                        ),
                       ],
                     ),
-                    const Icon(Icons.qr_code, color: Colors.white),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: const [
+                        _GopayIcon(icon: Icons.add, label: "Top Up"),
+                        SizedBox(width: 10),
+                        _GopayIcon(icon: Icons.payment, label: "Pay"),
+                        SizedBox(width: 10),
+                        _GopayIcon(icon: Icons.explore, label: "Explore"),
+                      ],
+                    ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
-                    _GopayIcon(icon: Icons.add, label: "Top Up"),
-                    _GopayIcon(icon: Icons.payment, label: "Pay"),
-                    _GopayIcon(icon: Icons.explore, label: "Explore"),
-                  ],
-                ),
               ],
             ),
           ),
@@ -118,10 +115,64 @@ class MainPage extends StatelessWidget {
           const SizedBox(height: 20),
 
           // Promos Section
-          const Text(
-            "Restos near me",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          SizedBox(
+            height: 80,
+            child: ListView(
+              scrollDirection: Axis.horizontal, // Scroll secara horizontal
+              children: [
+                Container(
+                  width: 200,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(10), // Membuat sudut membulat
+                    ),
+                    color: Colors.white, // Warna background putih
+                    elevation: 2, // Memberikan sedikit bayangan
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.all(12.0), // Padding di dalam card
+                      child: Center(
+                        child: Text(
+                          "Restos near me",
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(10), // Membuat sudut membulat
+                    ),
+                    color: Colors.white, // Warna background putih
+                    elevation: 2, // Memberikan sedikit bayangan
+                    child: Center(
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.all(12.0), // Padding di dalam card
+                        child: Text(
+                          "Best-seller in my area",
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                // Tambahkan card lainnya sesuai kebutuhan
+              ],
+            ),
           ),
+
           const SizedBox(height: 10),
           _PromoCard(
             imageUrl: 'lib/assets/promo1.png',
@@ -200,25 +251,46 @@ class _PromoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(bottom: 10),
-      child: Row(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Membulatkan sudut
+      ),
+      elevation: 2, // Memberikan efek bayangan
+      margin: const EdgeInsets.only(bottom: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            imageUrl,
-            height: 80,
-            width: 80,
-            fit: BoxFit.cover,
+          // Gambar Promo
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(10),
+            ),
+            child: Image.asset(
+              imageUrl,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
-          const SizedBox(width: 10),
-          Expanded(
+          Padding(
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Judul Promo
                 Text(
                   title,
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                // Deskripsi Promo
+                Text(
+                  description,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.black54,
                   ),
                 ),
               ],
